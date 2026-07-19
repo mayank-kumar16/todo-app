@@ -11,9 +11,7 @@ function App() {
     setInputValue(event.target.value);
   };
 
-  const updateTodos = (event, newTodo) => {
-    event.preventDefault();
-
+  const handleAddTodo = (newTodo) => {
     if (newTodo.trim() === '') {
       return;
     }
@@ -22,8 +20,8 @@ function App() {
 
     setTodos((prevTodos) => {
       const newTodoObject = {
-        ID: prevTodos.length + 1,
-        text: newTodo,
+        id: Date.now(),
+        text: newTodo.trim(),
         completed: false,
       };
 
@@ -31,16 +29,22 @@ function App() {
     });
   };
 
-  console.log(todosData);
+  const handleDeleteTodo = (id) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter((todo) => {
+        return todo.id !== id;
+      });
+    });
+  };
 
   return (
     <div className="App">
       <TodoForm
         inputValue={inputValue}
         onInputChange={handleInputChange}
-        addTodo={updateTodos}
+        addTodo={handleAddTodo}
       />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} deleteTodo={handleDeleteTodo} />
     </div>
   );
 }

@@ -4,7 +4,8 @@ const TodoForm = ({ inputValue, onInputChange, addTodo }) => {
       <form
         className="flex justify-center mt-6"
         onSubmit={(event) => {
-          addTodo(event, inputValue);
+          event.preventDefault();
+          addTodo(inputValue);
         }}
       >
         <input

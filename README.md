@@ -9,3 +9,7 @@
 - created states for _inputValue_ and _todoData_ inside App.
 - getting values of _inputValue_ and _todoData_ and updating it.
 - I am rendering all inside **TodoList**
+
+- new component **TodoList** is created and I am mapping overt todos inside **TodoList** and passing props to child.
+- using Date.now() to adding new id fror new todo object in list
+- using filter to delete clicked object by copmaring id.
