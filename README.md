@@ -1,4 +1,4 @@
-# to do app
+# to do app (used CRUD concept)
 
 ## till I have done
 
@@ -13,3 +13,7 @@
 - new component **TodoList** is created and I am mapping overt todos inside **TodoList** and passing props to child.
 - using Date.now() to adding new id fror new todo object in list
 - using filter to delete clicked object by copmaring id.
+
+- implemented checkbox complete todos by onChange on input
+- for check status using todo.completed
+- for handleonchangeComplete using map to define specific object in App.js

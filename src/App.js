@@ -37,6 +37,20 @@ function App() {
     });
   };
 
+  const handleCheckboxchange = (id) => {
+    console.log(id);
+
+    setTodos((prevTodos) => {
+      return prevTodos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, completed: !todo.completed };
+        } else {
+          return todo;
+        }
+      });
+    });
+  };
+
   return (
     <div className="App">
       <TodoForm
@@ -44,7 +58,11 @@ function App() {
         onInputChange={handleInputChange}
         addTodo={handleAddTodo}
       />
-      <TodoList todos={todos} deleteTodo={handleDeleteTodo} />
+      <TodoList
+        todos={todos}
+        deleteTodo={handleDeleteTodo}
+        completeTodo={handleCheckboxchange}
+      />
     </div>
   );
 }
