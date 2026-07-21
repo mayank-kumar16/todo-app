@@ -6,6 +6,26 @@ import TodoList from './components/TodoList';
 function App() {
   const [inputValue, setInputValue] = useState('');
   const [todos, setTodos] = useState(todosData);
+  const [editingId, setEditingId] = useState(null);
+
+  const handleEditid = (id) => {
+    setEditingId(id);
+  };
+
+  const saveEditedTodo = (id, editedText) => {
+    if (editedText.trim() === '') {
+      return;
+    }
+    setTodos((prevTodos) => {
+      return prevTodos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, text: editedText };
+        }
+        return todo;
+      });
+    });
+    setEditingId(null);
+  };
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -38,8 +58,6 @@ function App() {
   };
 
   const handleCheckboxchange = (id) => {
-    console.log(id);
-
     setTodos((prevTodos) => {
       return prevTodos.map((todo) => {
         if (todo.id === id) {
@@ -62,6 +80,9 @@ function App() {
         todos={todos}
         deleteTodo={handleDeleteTodo}
         completeTodo={handleCheckboxchange}
+        editTodo={handleEditid}
+        editingId={editingId}
+        saveEditedTodo={saveEditedTodo}
       />
     </div>
   );

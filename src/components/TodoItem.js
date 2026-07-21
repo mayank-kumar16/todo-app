@@ -1,4 +1,19 @@
-const TodoItem = ({ todo, deleteTodo, completeTodo }) => {
+import { useState } from 'react';
+
+const TodoItem = ({
+  todo,
+  deleteTodo,
+  completeTodo,
+  editTodo,
+  editingId,
+  saveEditedTodo,
+}) => {
+  const [editedText, setEditedText] = useState(todo.text);
+
+  const handleEditedTextChange = (event) => {
+    setEditedText(event.target.value);
+  };
+
   return (
     <div
       className={
@@ -18,18 +33,48 @@ const TodoItem = ({ todo, deleteTodo, completeTodo }) => {
             }}
           />
         </div>
-        <h3
-          className={
-            todo.completed
-              ? 'text-lg text-green-500 line-through font-semibold'
-              : 'text-lg font-semibold'
-          }
-        >
-          {todo.text}
-        </h3>
+
+        {editingId === todo.id ? (
+          <>
+            <input
+              className="text-black"
+              value={editedText}
+              onChange={handleEditedTextChange}
+            />
+            <button
+              className="bg-lime-600 text-white p-2"
+              onClick={() => {
+                saveEditedTodo(todo.id, editedText);
+              }}
+            >
+              save
+            </button>
+          </>
+        ) : (
+          <h3
+            className={
+              todo.completed
+                ? 'text-lg text-green-500 line-through font-semibold'
+                : 'text-lg font-semibold'
+            }
+          >
+            {todo.text}
+          </h3>
+        )}
+
+        {editingId !== todo.id && (
+          <button
+            className="bg-black p-3 text-white text-sm ml-2"
+            onClick={() => {
+              editTodo(todo.id);
+            }}
+          >
+            Edit
+          </button>
+        )}
       </div>
       <button
-        className="bg-black text-white text-sm p-4"
+        className="bg-black text-white text-sm p-4 "
         onClick={() => {
           deleteTodo(todo.id);
         }}
