@@ -17,3 +17,9 @@
 - implemented checkbox complete todos by onChange on input
 - for check status using todo.completed
 - for handleonchangeComplete using map to define specific object in App.js
+
+- impleneted edit and save functionality
+- for edit i am using a editingId state it gets updated with current todo id. edit will be shown only when current id and todo.id doesnot match
+- after edit save input and save btn will be visible based on condition after save input text value will be updated saveEditedTodo by passing current id and newinput value
+
+- filter logic has been completed

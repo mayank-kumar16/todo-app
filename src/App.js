@@ -2,11 +2,28 @@ import { useState } from 'react';
 import TodoForm from './components/TodoForm';
 import { todosData } from './data/todosData';
 import TodoList from './components/TodoList';
+import TodoFilters from './components/TodoFiters';
+import { FILTER_TXT } from './data/todoFilterValues';
 
 function App() {
   const [inputValue, setInputValue] = useState('');
   const [todos, setTodos] = useState(todosData);
   const [editingId, setEditingId] = useState(null);
+  const [filter, setFilter] = useState(FILTER_TXT.ALL);
+
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === 'active') {
+      return !todo.completed;
+    } else if (filter === 'completed') {
+      return todo.completed;
+    } else {
+      return true;
+    }
+  });
+
+  const handleFilterSelect = (newFilter) => {
+    setFilter(newFilter);
+  };
 
   const handleEditid = (id) => {
     setEditingId(id);
@@ -76,8 +93,9 @@ function App() {
         onInputChange={handleInputChange}
         addTodo={handleAddTodo}
       />
+      <TodoFilters handleFilterSelect={handleFilterSelect} filter={filter} />
       <TodoList
-        todos={todos}
+        todos={filteredTodos}
         deleteTodo={handleDeleteTodo}
         completeTodo={handleCheckboxchange}
         editTodo={handleEditid}
