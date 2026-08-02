@@ -1,8 +1,8 @@
 # ✅ Todo App
 
-A React Todo application built as part of my React interview preparation.
+A React application for managing daily tasks with complete CRUD functionality.
 
-This project focuses on CRUD operations, state management, controlled components, and React data flow.
+This project demonstrates state management, controlled components, CRUD operations, and React data flow.
 
 ---
 
@@ -23,12 +23,11 @@ This project focuses on CRUD operations, state management, controlled components
 
 - React
 - JavaScript (ES6+)
-- Create React App
 - Tailwind CSS
 
 ---
 
-## 📚 React Concepts Practiced
+## 📚 React Concepts Demonstrated
 
 ### State Management
 
@@ -40,10 +39,10 @@ This project focuses on CRUD operations, state management, controlled components
 
 ### CRUD Operations
 
-- Create Todo
-- Read Todo List
-- Update Todo
-- Delete Todo
+- Create
+- Read
+- Update
+- Delete
 
 ### Component Communication
 
@@ -65,7 +64,7 @@ This project focuses on CRUD operations, state management, controlled components
 - map()
 - filter()
 - Immutable Updates
-- Object Updates using Spread Operator
+- Object Spread Operator
 
 ---
 
@@ -75,9 +74,9 @@ This project focuses on CRUD operations, state management, controlled components
 src/
 │
 ├── components/
-│   ├── TodoForm.jsx
-│   ├── TodoList.jsx
-│   └── TodoItem.jsx
+│   ├── TodoForm.js
+│   ├── TodoList.js
+│   └── TodoItem.js
 │
 ├── data/
 │   └── todoData.js
@@ -99,22 +98,6 @@ During this project I learned how to:
 - Lift state to the nearest common parent
 - Handle editing using conditional rendering
 - Build reusable React components with clear responsibilities
-
----
-
-## ▶️ Installation
-
-```bash
-git clone <repository-url>
-
-cd todo-app
-
-npm install
-
-npm start
-```
-
----
 
 ---
 
