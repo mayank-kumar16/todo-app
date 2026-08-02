@@ -1,25 +1,133 @@
-# to do app (used CRUD concept)
+# ✅ Todo App
 
-## till I have done
+A React Todo application built as part of my React interview preparation.
 
-- cleaned react default files
-- tailwind installed
-- created components **TodoForm** & **TodoList** and using them in **App.js**, also created data folder > todoData(list of objs.) and using it.
-- workded on control input (state input) and form onSubmit by passing props to **TodoForm**
-- created states for _inputValue_ and _todoData_ inside App.
-- getting values of _inputValue_ and _todoData_ and updating it.
-- I am rendering all inside **TodoList**
+This project focuses on CRUD operations, state management, controlled components, and React data flow.
 
-- new component **TodoList** is created and I am mapping overt todos inside **TodoList** and passing props to child.
-- using Date.now() to adding new id fror new todo object in list
-- using filter to delete clicked object by copmaring id.
+---
 
-- implemented checkbox complete todos by onChange on input
-- for check status using todo.completed
-- for handleonchangeComplete using map to define specific object in App.js
+## 🚀 Features
 
-- impleneted edit and save functionality
-- for edit i am using a editingId state it gets updated with current todo id. edit will be shown only when current id and todo.id doesnot match
-- after edit save input and save btn will be visible based on condition after save input text value will be updated saveEditedTodo by passing current id and newinput value
+- Add new todos
+- Edit existing todos
+- Save updated todos
+- Delete todos
+- Mark todos as completed
+- Filter todos (All / Active / Completed)
+- Controlled form input
+- Responsive layout
 
-- filter logic has been completed
+---
+
+## 🛠️ Built With
+
+- React
+- JavaScript (ES6+)
+- Create React App
+- Tailwind CSS
+
+---
+
+## 📚 React Concepts Practiced
+
+### State Management
+
+- useState
+- Functional State Updates
+- Controlled Components
+- State Ownership
+- Single Source of Truth
+
+### CRUD Operations
+
+- Create Todo
+- Read Todo List
+- Update Todo
+- Delete Todo
+
+### Component Communication
+
+- Parent → Child Communication
+- Child → Parent Communication (Callbacks)
+- Lifting State Up
+- Component Composition
+
+### React Thinking
+
+- Conditional Rendering
+- List Rendering
+- Keys
+- Editing State
+- Derived UI State
+
+### JavaScript Concepts
+
+- map()
+- filter()
+- Immutable Updates
+- Object Updates using Spread Operator
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+│
+├── components/
+│   ├── TodoForm.jsx
+│   ├── TodoList.jsx
+│   └── TodoItem.jsx
+│
+├── data/
+│   └── todoData.js
+│
+├── App.js
+└── index.js
+```
+
+---
+
+## 💡 Key Learning Outcomes
+
+During this project I learned how to:
+
+- Build complete CRUD functionality in React
+- Manage application state using useState
+- Create controlled form components
+- Update arrays immutably using map() and filter()
+- Lift state to the nearest common parent
+- Handle editing using conditional rendering
+- Build reusable React components with clear responsibilities
+
+---
+
+## ▶️ Installation
+
+```bash
+git clone <repository-url>
+
+cd todo-app
+
+npm install
+
+npm start
+```
+
+---
+
+---
+
+## 🔮 Future Improvements
+
+- Local Storage Persistence
+- Due Dates
+- Search Todos
+- Drag & Drop Reordering
+- Categories & Tags
+
+---
+
+## 👨‍💻 Author
+
+Mayank Kumar
